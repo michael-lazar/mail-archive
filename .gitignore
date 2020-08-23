@@ -1,0 +1,8 @@
+venv/
+mail_archive/hyperkitty.db
+mail_archive/hyperkitty.log
+mail_archive/fulltext_index
+mail_archive/static
+__pycache__
+*.pyc
+.idea/
