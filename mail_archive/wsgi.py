@@ -8,11 +8,14 @@ https://docs.djangoproject.com/en/{{ docs_version }}/howto/deployment/wsgi/
 """
 
 import os
+import sys
 
 from django.core.wsgi import get_wsgi_application
 
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+sys.path.append(PROJECT_DIR)
+
 if os.path.exists(os.path.join(PROJECT_DIR, 'PRODUCTION')):
     settings_module = 'settings.production'
 else:
