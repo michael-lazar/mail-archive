@@ -4,7 +4,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["mail-archive.mozz.us"]
 
-DATABASES['default']['name'] = "/etc/mail-archive/hyperkitty.db"
+DATABASES['default']['NAME'] = "/etc/mail-archive/hyperkitty.db"
 LOGGING['handlers']['file']['filename'] = "/etc/mail-archive/hyperkitty.log"
 
 # Security settings
