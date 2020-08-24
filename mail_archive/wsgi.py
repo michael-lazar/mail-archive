@@ -11,30 +11,13 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+try:
+    from mod_wsgi import process_group
+except ImportError:
+    settings_module = 'settings.local'
+else:
+    settings_module = process_group
 
-# import sys
-# import site
-
-# For some unknown reason, sometimes mod_wsgi fails to set the python paths to
-# the virtualenv, with the 'python-path' option. You can do it here too.
-#
-# # Remember original sys.path.
-# prev_sys_path = list(sys.path)
-# # Add here, for the settings module
-# site.addsitedir(os.path.abspath(os.path.dirname(__file__)))
-# # Add the virtualenv
-# venv = os.path.join(os.path.abspath(os.path.dirname(__file__)),
-#                     '..', 'lib', 'python2.6', 'site-packages')
-# site.addsitedir(venv)
-# # Reorder sys.path so new directories at the front.
-# new_sys_path = []
-# for item in list(sys.path):
-#     if item not in prev_sys_path:
-#         new_sys_path.append(item)
-#         sys.path.remove(item)
-#         sys.path[:0] = new_sys_path
-
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
 application = get_wsgi_application()

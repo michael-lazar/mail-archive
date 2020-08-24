@@ -1,8 +1,4 @@
-from mail_archive.settings import *
-
-import os
-
-SECRET_KEY = os.getenv("SECRET_KEY")
+from settings.local import *
 
 DEBUG = False
 
