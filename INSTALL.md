@@ -24,3 +24,10 @@ python manage.py loaddata first_start
 ```
 python manage.py createsuperuser
 ```
+
+#### Build static assets
+
+```
+python manage.py collectstatic
+python manage.py compress
+```
