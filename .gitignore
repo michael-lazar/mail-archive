@@ -6,3 +6,4 @@ mail_archive/static
 __pycache__
 *.pyc
 .idea/
+PRODUCTION

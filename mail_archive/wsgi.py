@@ -11,12 +11,12 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-try:
-    from mod_wsgi import process_group
-except ImportError:
-    settings_module = 'settings.local'
+
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+if os.path.exists(os.path.join(PROJECT_DIR, 'PRODUCTION')):
+    settings_module = 'settings.production'
 else:
-    settings_module = process_group
+    settings_module = 'settings.local'
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
