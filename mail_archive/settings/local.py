@@ -2,7 +2,7 @@
 import os
 from django.contrib.messages import constants as messages  # flake8: noqa
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(os.path.join(__file__, '..')))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'change-this-on-your-production-server'
