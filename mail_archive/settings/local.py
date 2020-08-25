@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
     'django_mailman3.lib.auth.fedora',
+    'custom',
 )
 
 MIDDLEWARE = (
@@ -298,5 +299,10 @@ SHOW_INACTIVE_LISTS_DEFAULT = True
 # Disable Posting
 HYPERKITTY_ALLOW_WEB_POSTING = False
 
-
 HYPERKITTY_ENABLE_GRAVATAR = True
+
+MAILMAN_REST_API_URL = ''
+MAILMAN_REST_API_USER = ''
+MAILMAN_REST_API_PASS = ''
+MAILMAN_ARCHIVER_KEY = ''
+MAILMAN_ARCHIVER_FROM = ('127.0.0.1', '::1')
