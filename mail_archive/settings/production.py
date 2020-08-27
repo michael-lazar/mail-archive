@@ -6,6 +6,7 @@ ALLOWED_HOSTS = ["mail-archive.mozz.us"]
 
 DATABASES['default']['NAME'] = "/etc/mail-archive/hyperkitty.db"
 LOGGING['handlers']['file']['filename'] = "/etc/mail-archive/hyperkitty.log"
+HAYSTACK_CONNECTIONS['default']['PATH'] = "/etc/mail-archive/fulltext_index"
 
 # Security settings
 SESSION_COOKIE_SECURE = True
