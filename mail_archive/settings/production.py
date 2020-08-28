@@ -4,7 +4,15 @@ DEBUG = False
 
 ALLOWED_HOSTS = ["mail-archive.mozz.us"]
 
-DATABASES['default']['NAME'] = "/etc/mail-archive/hyperkitty.db"
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/etc/mail-archive/db.cnf',
+        },
+    }
+}
+
 LOGGING['handlers']['file']['filename'] = "/etc/mail-archive/hyperkitty.log"
 HAYSTACK_CONNECTIONS['default']['PATH'] = "/etc/mail-archive/fulltext_index"
 
