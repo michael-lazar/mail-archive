@@ -9,6 +9,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
             'read_default_file': '/etc/mail-archive/db.cnf',
+            'init_command': 'SET default_storage_engine=MYISAM',
         },
     }
 }
